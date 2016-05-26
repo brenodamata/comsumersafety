@@ -30,7 +30,7 @@ module CpscApi
   end
 
   def self.import_all_recalls
-    @all_results = HTTParty.get(@base_uri).parsed_response if @all_results.empty
+    @all_results = HTTParty.get(@base_uri).parsed_response if @all_results.empty?
     Product.import(@all_results)
   end
 

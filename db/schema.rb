@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526003401) do
+ActiveRecord::Schema.define(version: 20160526173223) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160526003401) do
     t.string   "manufacturer_countries"
     t.string   "description"
     t.string   "model"
-    t.string   "type"
+    t.string   "product_type"
     t.integer  "category_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20160526003401) do
     t.string   "title"
     t.text     "consumer_contact",  limit: 65535
     t.datetime "last_publish_date"
-    t.integer  "number_of_units"
+    t.string   "number_of_units"
     t.text     "injuries",          limit: 65535
     t.text     "hazards",           limit: 65535
     t.text     "remedies",          limit: 65535
