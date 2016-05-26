@@ -1,0 +1,92 @@
+<%= form_for(recall) do |f| %>
+  <% if recall.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recall.errors.count, "error") %> prohibited this recall from being saved:</h2>
+
+      <ul>
+      <% recall.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :consumer_contact %>
+    <%= f.text_area :consumer_contact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_publish_date %>
+    <%= f.datetime_select :last_publish_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number_of_units %>
+    <%= f.number_field :number_of_units %>
+  </div>
+
+  <div class="field">
+    <%= f.label :injuries %>
+    <%= f.text_area :injuries %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hazards %>
+    <%= f.text_area :hazards %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remedies %>
+    <%= f.text_area :remedies %>
+  </div>
+
+  <div class="field">
+    <%= f.label :retailers %>
+    <%= f.text_area :retailers %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recallable_id %>
+    <%= f.number_field :recallable_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recallable_type %>
+    <%= f.text_field :recallable_type %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

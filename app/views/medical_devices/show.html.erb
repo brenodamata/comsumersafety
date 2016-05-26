@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @medical_device.name %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @medical_device.brand %>
+</p>
+
+<p>
+  <strong>Specialty:</strong>
+  <%= @medical_device.specialty %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @medical_device.manufacturer %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @medical_device.category %>
+</p>
+
+<%= link_to 'Edit', edit_medical_device_path(@medical_device) %> |
+<%= link_to 'Back', medical_devices_path %>

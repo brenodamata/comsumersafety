@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recalls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Url</th>
+      <th>Title</th>
+      <th>Consumer contact</th>
+      <th>Last publish date</th>
+      <th>Number of units</th>
+      <th>Injuries</th>
+      <th>Hazards</th>
+      <th>Remedies</th>
+      <th>Retailers</th>
+      <th>Country</th>
+      <th>Recallable</th>
+      <th>Recallable type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recalls.each do |recall| %>
+      <tr>
+        <td><%= recall.number %></td>
+        <td><%= recall.date %></td>
+        <td><%= recall.description %></td>
+        <td><%= recall.url %></td>
+        <td><%= recall.title %></td>
+        <td><%= recall.consumer_contact %></td>
+        <td><%= recall.last_publish_date %></td>
+        <td><%= recall.number_of_units %></td>
+        <td><%= recall.injuries %></td>
+        <td><%= recall.hazards %></td>
+        <td><%= recall.remedies %></td>
+        <td><%= recall.retailers %></td>
+        <td><%= recall.country %></td>
+        <td><%= recall.recallable_id %></td>
+        <td><%= recall.recallable_type %></td>
+        <td><%= link_to 'Show', recall %></td>
+        <td><%= link_to 'Edit', edit_recall_path(recall) %></td>
+        <td><%= link_to 'Destroy', recall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recall', new_recall_path %>

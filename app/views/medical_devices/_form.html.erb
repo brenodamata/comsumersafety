@@ -1,0 +1,42 @@
+<%= form_for(medical_device) do |f| %>
+  <% if medical_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medical_device.errors.count, "error") %> prohibited this medical_device from being saved:</h2>
+
+      <ul>
+      <% medical_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= f.label :specialty %>
+    <%= f.text_field :specialty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manufacturer %>
+    <%= f.text_field :manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.text_field :category_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

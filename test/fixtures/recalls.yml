@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  date: 2016-05-25 20:34:01
+  description: MyText
+  url: MyString
+  title: MyString
+  consumer_contact: MyText
+  last_publish_date: 2016-05-25 20:34:01
+  number_of_units: 1
+  injuries: MyText
+  hazards: MyText
+  remedies: MyText
+  retailers: MyText
+  country: MyString
+  recallable_id: 1
+  recallable_type: MyString
+
+two:
+  number: MyString
+  date: 2016-05-25 20:34:01
+  description: MyText
+  url: MyString
+  title: MyString
+  consumer_contact: MyText
+  last_publish_date: 2016-05-25 20:34:01
+  number_of_units: 1
+  injuries: MyText
+  hazards: MyText
+  remedies: MyText
+  retailers: MyText
+  country: MyString
+  recallable_id: 1
+  recallable_type: MyString

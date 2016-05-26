@@ -1,0 +1,1 @@
+json.extract! @recall, :id, :number, :date, :description, :url, :title, :consumer_contact, :last_publish_date, :number_of_units, :injuries, :hazards, :remedies, :retailers, :country, :recallable_id, :recallable_type, :created_at, :updated_at
