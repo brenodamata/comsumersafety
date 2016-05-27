@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  display_name: MyString
+  size: 1.5
+  records: 1
+  file: MyString
+  date: 2016-05-27 10:52:14
+  importable_id: 1
+  importable_type: MyString
+
+two:
+  display_name: MyString
+  size: 1.5
+  records: 1
+  file: MyString
+  date: 2016-05-27 10:52:14
+  importable_id: 1
+  importable_type: MyString

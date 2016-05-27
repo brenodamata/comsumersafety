@@ -24,27 +24,34 @@ module FdaApi
     if force || @all_results.empty?
       @all_results = HTTParty.get(@base_uri)
     else
-      @all_results
+      all_results
     end
   end
 
-  def all_food
+  def self.import_all
+    [Food, Drug, MedicalDevice].each do |type|
+      name = (type == MedicalDevice ? "device" : type.to_s.underscore)
+      type.import self.all_data_files["results"][name]
+    end
+  end
+
+  def self.all_food
     all_data_files["results"]["food"]["enforcement"]
   end
 
-  def import_all_food
+  def self.import_all_food
     Food.import all_food
   end
 
-  def all_drug_event
+  def self.all_drug_event
     all_data_files["results"]["drug"]["event"]
   end
 
-  def all_drug_label
+  def self.all_drug_label
     all_data_files["results"]["drug"]["label"]
   end
 
-  def import_all_drug
+  def self.import_all_drug
     Drug.import all_data_files["results"]["drug"]
   end
 
