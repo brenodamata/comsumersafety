@@ -21,13 +21,11 @@ module FdaApi
   end
 
   def self.all_data_files force=false
-    if force || @all_results.empty?
-      @all_results = HTTParty.get(@base_uri)
-    else
-      all_results
-    end
+    @all_results = HTTParty.get(@base_uri) if force || @all_results.empty?
+    all_results
   end
 
+  # Import all data from FDA API
   def self.import_all
     [Food, Drug, MedicalDevice].each do |type|
       name = (type == MedicalDevice ? "device" : type.to_s.underscore)
@@ -35,6 +33,18 @@ module FdaApi
     end
   end
 
+  # Import new data from FDA API
+  def self.import_new
+    # If it's the first time or data has it been updated
+    if ImportHelper.last_meta_date.nil? || all_results["meta"]["last_updated"].to_date > ImportHelper.last_meta_date
+      ImportHelper.log_meta all_results["meta"]["last_updated"]
+
+      import_all
+    end
+  end
+
+
+# sandbox start
   def self.all_food
     all_data_files["results"]["food"]["enforcement"]
   end
@@ -69,4 +79,5 @@ module FdaApi
     end
     results.flatten.compact
   end
+# sandbox end
 end

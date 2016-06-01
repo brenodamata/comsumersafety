@@ -18,7 +18,7 @@ class ImportLog < ApplicationRecord
   protected
 
   def set_import_type_id
-    unless TYPES[self.import_type.underscore].nil?
+    unless TYPES[self.import_type].nil?
       self.type_id = TYPES[self.import_type.underscore]
     else
       self.type_id = TYPES["none"]
@@ -26,7 +26,7 @@ class ImportLog < ApplicationRecord
   end
 
   def process
-    unless self.processed
+    unless self.processed || import_type.nil?
       self.import_type.capitalize.constantize.process self.get_json_from_zip, self.import_sub_type
     end
   end
