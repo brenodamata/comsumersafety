@@ -13,8 +13,10 @@ class MedicalDevice < ApplicationRecord
   # Returns true/false if successful/not
   def self.process data, type
     case type
+    when "enforcement"
+      return self.process_enforcemnt data
     when "classification"
-      return self.process_classification data
+        return self.process_classification data
     when "recall"
       return self.process_recall data
     when "registrationlisting"
@@ -26,6 +28,12 @@ class MedicalDevice < ApplicationRecord
     else
       return false # TODO: implement a failsafe
     end
+  end
+
+  # Reads and input Json formatted data about Device Enforcements
+  # Return true/false if successful/not
+  def self.process_enforcemnt data
+    # data in json format
   end
 
   # Reads and input Json formatted data about Device Classification
